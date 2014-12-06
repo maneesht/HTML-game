@@ -4,5 +4,8 @@ angular.module('app.game', [])
 			$("#container").empty();
 			$("#container").append($scope.html);
 		})
+		$scope.compile = function() {
+			console.log("You clicked a button!")
+		}
 	})
 	
