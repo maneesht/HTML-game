@@ -1,19 +1,23 @@
-<div>
-	<p>The basic structure of HTML is like this:
-	<br>
-	&lthtml&gt
-	<br>
-		&ltbody&gt
-		<br>
-		Here goes all of your data!
-		<br>
-		&lt/body&gt
-	<br>
-	&lt/html&gt
-	</p>
+<div  class="container-fluid">
+    <div class="container">
+        <h4>The basic structure of HTML is like this:</h4>
+        <div class="code">
+            &lthtml&gt
+            <br>
+                &ltbody&gt
+                <br>
+                Here goes all of your data!
+                <br>
+                &lt/body&gt
+            <br>
+            &lt/html&gt
+        </div>
+        <h4>All html pages start out with an html tag</h4>
+        <h4 class="alert alert-warning">HTML is NOT case-sensitive</h4>
+
+    </div>
+    <h3>Try it out below!</h3>
+    <button class="btn btn-default pull-right" ng-click="compile()">Check</button>
+    <textarea class = "form-control" autofocus="autofocus" style="width:100%" ng-model="html"></textarea>
+    <div id="container"></div>
 </div>
-<div>All html pages start out with an html tag</div>
-<div>HTML is NOT case-sensitive</div>
-<textarea style="height: 50%; width:100%" ng-model="html"></textarea>
-<div id="container"></div>
-<button ng-click="compile()">Check</button>

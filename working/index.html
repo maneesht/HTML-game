@@ -1,15 +1,43 @@
 <html ng-app="html_game">
-	<head>
-		<title>HTML Game</title>
-	</head>
-	<body>
-		<script src="lib/angular/angular.js"></script>
-		<script src="lib/jquery/dist/jquery.js"></script>
-		<script src="lib/angular-route/angular-route.js"></script>
-		<script src="app/app.js"></script>
-		<script src="app/home/home.js"></script>
-		<script src="app/game/game.js"></script>
-		<div ng-view></div>
+    <head>
+        <title>HTML Game</title>
+        <link href="lib/bootstrap/dist/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/angular-route/angular-route.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/home/home.js"></script>
+        <script src="app/game/game.js"></script>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar">Link</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div> -->
+                <div class="collapse navbar-collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/#home">Home</a></li>
+                        <li class="active">
+                            <a href="/#game">Game</a>
 
-	</body>
+                        </li>
+                        <ol class="pull-right breadcrumb">
+                          <li><a class="breadcrumb" href=""> Part 1</a></li>
+                          <li><a href="#">Part 2</a></li>
+                          <li class="active">Part 3</li>
+                        </ol>
+                        
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div ng-view></div>
+
+    </body>
 </html>
