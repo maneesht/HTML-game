@@ -1,4 +1,4 @@
-angular.module('html_game' , ['ngRoute', 'app.landing', 'app.game'])
+angular.module('html_game' , ['ngRoute', 'app.landing', 'app.game', 'app.gameBoard'])
 	.config(function($routeProvider) {
 		$routeProvider.when('/home', {
 			templateUrl: "app/home/home.html",
@@ -9,5 +9,9 @@ angular.module('html_game' , ['ngRoute', 'app.landing', 'app.game'])
 			templateUrl:"app/game/game.html",
 			controller: "gameCtrl",
 			controllerAs: "game"
+		})
+		.when('/gameBoard', {
+			templateUrl: "app/Board/gameBoard.html",
+			controller: "boardCtrl"
 		})
 	});
