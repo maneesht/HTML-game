@@ -1,0 +1,21 @@
+{
+  "name": "HTML-game",
+  "version": "0.0.1",
+  "keywords": [
+    "HTML"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.5",
+    "angular-route": "~1.3.5",
+    "jquery": "~2.1.1"
+  }
+}
