@@ -1,77 +1,59 @@
-<div class="container-fluid" style="background:#E6E6FA" ></div>
-	<div>
-		<div>
-			<button class="btn btn-primary btn-lg pull-right"style=" margin-right:300px; margin-top:100px" ng-click="rollDice()">{{display}}</button>
-		</div>
+<div style="background:#E6E6FA" class="container-fluid" >
+     <h2 style="text-align:center" >
+            Welcome to the gameBoard!
+    </h2>
+    
+    <div class="pull-right">
+        <button class="btn btn-primary btn-lg"style=""ng-click="rollDice()">{{display}}</button>
+        <h4>Total Score:{{score}}</h4>
+    </div>
 
-		<h1 style="text-align:center" >
-			Welcome to the gameBoard!
-		</h1>
+    <div>
+        <table style="table-layout:fixed" class="fixed"  width="70%" height="80%">
+            <tr height="25%" width="25%">
+                <td style="background:#36E8F5">
+                </td>       
+                <td style="background:#F44336 ">
+                </td>   
+                <td style="background:#36E8F5">
+                </td>   
+                <td style="background:#F44336 ">
+                </td>   
+            </tr>
 
-		<div class="pull-right" style=" margin-right:300px; margin-top:400px">
-			Total Score:{{score}}
-		</div>
+            <tr height="25%" width="25%">
+                <td style="background:#F44336 ">
+                </td>   
+                <td style="background:#E6E6FA">
+                </td>   
+                <td style="background:#E6E6FA">
+                </td>   
+                <td style="background:#36E8F5">
+                </td>   
+            </tr>
 
-		<table bgcolor="#E6E6FA" style="table-layout:fixed" style="overflow: hidden" class="fixed" width="45%" height="75%" align = "center">
-			<tr>
-				<td style="background:#36E8F5">
-				
-				</td>		
-				<td style="background:#F44336 ">
-				
-				</td>	
-				<td style="background:#36E8F5">
-				
-				</td>	
-				<td style="background:#F44336 ">
-				
-				</td>	
-			</tr>
+            <tr height="25%" width="25%">
+                <td style="background:#36E8F5">
+                </td>   
+                <td style="background:#E6E6FA">
+                </td>   
+                <td style="background:#E6E6FA">
+                </td>   
+                <td style="background:#F44336 ">
+                </td>   
+            </tr>
 
-			<tr>
-				<td style="background:#F44336 ">
-				
-				</td>	
-				<td style="background:#E6E6FA">
-		
-				</td>	
-				<td style="background:#E6E6FA">
-				
-				</td>	
-				<td style="background:#36E8F5">
-				
-				</td>	
-			</tr>
-
-			<tr>
-				<td style="background:#36E8F5">
-				
-				</td>	
-				<td style="background:#E6E6FA">
-				
-				</td>	
-				<td style="background:#E6E6FA">
-				
-				</td>	
-				<td style="background:#F44336 ">
-				
-				</td>	
-			</tr>
-
-			<tr>
-				<td style="background:#F44336 ;text-align:center;color:white">
-				Start
-				</td>	
-				<td style="background:#36E8F5">
-				
-				</td>	
-				<td style="background:#F44336 ">
-				
-				</td>	
-				<td style="background:#36E8F5">
-				
-				</td>	
-			</tr>
-		</table>
-
-		
+            <tr height="25%" width="25%">
+                <td style="background:#F44336 ;text-align:center;color:white">
+                Start
+                </td>   
+                <td style="background:#36E8F5">
+                </td>   
+                <td style="background:#F44336 ">
+                </td>   
+                <td style="background:#36E8F5">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
