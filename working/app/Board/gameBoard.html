@@ -1,59 +1,70 @@
 <div style="background:#E6E6FA" class="container-fluid" >
-     <h2 style="text-align:center" >
+     <h2 style="text-align:center" class = "col-lg-11" >
             Welcome to the gameBoard!
     </h2>
-    
-    <div class="pull-right">
-        <button class="btn btn-primary btn-lg"style="align:center"ng-click="rollDice()">{{display}}</button>
-        <h4>Total Score:{{score}}</h4>
-    </div>
-
     <div>
-        <table style="table-layout:fixed" class="fixed"  width="70%" height="80%">
+        <table style="table-layout:fixed" class="fixed col-lg-10"  width="70%" height="80%">
             <tr height="25%" width="25%">
-                <td style="background:#36E8F5">
+                <td style="background:#36E8F5">3
+                    <img width="25%" src="/images/space-holder.png" ng-if="tiles[3].display" />
                 </td>       
-                <td style="background:#F44336 ">
+                <td style="background:#F44336 ">4
+                    <img width="25%" style="margin-left: 20px;" ng-src="images/space-holder.png" ng-if="tiles[4].display"/>
                 </td>   
-                <td style="background:#36E8F5">
+                <td style="background:#36E8F5">5
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[5].display"/>
                 </td>   
-                <td style="background:#F44336 ">
-                </td>   
-            </tr>
-
-            <tr height="25%" width="25%">
-                <td style="background:#F44336 ">
-                </td>   
-                <td style="background:#E6E6FA">
-                </td>   
-                <td style="background:#E6E6FA">
-                </td>   
-                <td style="background:#36E8F5">
+                <td style="background:#F44336 ">6
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[6].display"/>
                 </td>   
             </tr>
 
             <tr height="25%" width="25%">
-                <td style="background:#36E8F5">
+                <td style="background:#F44336 ">2 
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[2].display"/>
                 </td>   
                 <td style="background:#E6E6FA">
                 </td>   
                 <td style="background:#E6E6FA">
                 </td>   
-                <td style="background:#F44336 ">
+                <td style="background:#36E8F5">7
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[7].display"/>
+                </td>   
+            </tr>
+
+            <tr height="25%" width="25%">
+                <td style="background:#36E8F5">1
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[1].display"/>
+                </td>   
+                <td style="background:#E6E6FA">
+                </td>   
+                <td style="background:#E6E6FA">
+                </td>   
+                <td style="background:#F44336 ">8
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[8].display"/>
                 </td>   
             </tr>
 
             <tr height="25%" width="25%">
                 <td style="background:#F44336 ;text-align:center;color:white">
                 Start
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[0].display"/>
                 </td>   
-                <td style="background:#36E8F5">
+                <td style="background:#36E8F5">11
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[11].display"/>
                 </td>   
-                <td style="background:#F44336 ">
+                <td style="background:#F44336 ">10
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[10].display"/>
                 </td>   
-                <td style="background:#36E8F5">
+                <td style="background:#36E8F5">9
+                    <img width="25%" ng-src="images/space-holder.png" ng-if="tiles[9].display"/>
                 </td>
             </tr>
         </table>
+    </div>
+    <div class="col-lg-2">
+        <button class="btn btn-primary btn-lg"style="align:center" ng-click="rollDice()" ng-disabled="disableDice">{{display}}</button>
+        <button class="btn btn-success btn-lg" ng-click="proceed()" ng-disabled="dis">Next</button>
+        <h4>Total Score:{{score}}</h4>
     </div>
 </div>

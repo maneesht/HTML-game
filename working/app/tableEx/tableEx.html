@@ -116,11 +116,13 @@
 		    </div>
 		    <div class="col-lg-8"> 
 		        <h3 class="col-lg-7">Try it out below!</h3>
+                <button class="btn btn-danger col-lg-2 " ng-click="askForHint()">Hint</button>
 		        <button class="btn btn-default col-lg-2 btn-lg pull-right" ng-click="compile()">Check</button>
 		        <textarea class = "code white" data-role="none" style = "resize: none;overflow: invisible; width:100%; height: 35%" autofocus="autofocus" ng-model="htmlObj.html"></textarea>
 		        <h4 class="alert alert-danger" ng-if="error">Oops! Try Again!</h4>
 		    </div>
-		    <div class="clearfix container">
+		    <div class="col-lg-8">
+    			<h4 class="alert alert-danger" ng-if="hint">Hint: style="font-size:"</h4>
     			<h1 style="text-align: center" >Your Code will appear below</h1>
     			<div id="container"></div>
 			</div>

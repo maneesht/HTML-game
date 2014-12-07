@@ -1,20 +1,40 @@
 angular.module('app.fontExercise', [])
-    .controller('sizeCtrl',  function($scope, $location){
+    .controller('sizeCtrl',  function($scope, $location, gameData){
+    	$scope.hint = false;
+    	$scope.fontSize = getRandom();
         $scope.$watch('html', function() {
-			$("#container").empty();
-			$("#container").append($scope.html);
+			$(".div").empty();
+			$(".div").append($scope.html);
+			validate();
 		})
         $scope.compile = function() {
-        	console.log("Clicked!");
-			if($scope.html && $scope.html.indexOf("div") > -1 && $scope.html.indexOf("font-size") > -1){
+			if($scope.html && validate()){
 				alert("You SHALL PASS!");
-				$location.url("/exercise2");
+				if($scope.hint) {
+					gameData.score = 1;
+				} else {
+					gameData.score = 3;
+				}
+				gameData.inMiddleOfMove = false;
+				$location.url("/gameBoard");
 			}
 			else
 				$scope.error = true;
 		}
 
+		$scope.askForHint = function() {
+			$scope.hint = true;
+		}
+
 		function validate() {
 			//HTML validate
-		}
+			if(!$scope.html || $scope.html.indexOf("<div>") < 0){
+				return false;
+			}
+			var fontSize = $("p").css("font-size");
+			return fontSize === $scope.fontSize;
+		} 
+		function getRandom () {
+            return Math.floor((Math.random()*90)+10) + "px";
+        }
     })

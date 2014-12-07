@@ -57,7 +57,12 @@ gulp.task('livereload', function() {
 	gulp.watch(OUT + "**/*", livereload.changed);
 })
 
+gulp.task('images', function() {
+	return gulp.src(IN + "**/*.png")
+		.pipe(gulp.dest(OUT));
+})
+
 gulp.task('dev', function() {
 	
-	return runSequence('clean', 'openBrowser',  'run', 'build', 'livereload');
+	return runSequence('clean', 'images',  'run', 'build','openBrowser', 'livereload');
 })

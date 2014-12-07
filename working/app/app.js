@@ -23,4 +23,14 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			templateUrl: "app/tableEx/tableEx.html",
 			controller: "tableCtrl"
 		})
-	});
+	})
+	.service('gameData', function() {
+		var data = {
+			score: 0,
+			spacesLeft: 12,
+			currentSpace : 0,
+			spacesToMove: 0,
+			tiles: {}
+		};
+		return data;
+	})

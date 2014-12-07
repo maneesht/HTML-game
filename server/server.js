@@ -15,6 +15,9 @@ server.get("/", function(req,res) {
 server.get('/*.js', function(req,res) {
 	res.sendfile(workingDir+ req.params[0] + '.js');
 })
+server.get('/*.png', function(req,res) {
+	res.sendfile(workingDir+ req.params[0] + '.png');
+})
 server.get('/*.html', function (req, res) {
     res.sendfile(workingDir + req.params[0] + '.html');
 });

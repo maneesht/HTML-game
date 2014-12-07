@@ -18,10 +18,14 @@ angular.module('app.table', [])
         $scope.compile = function() {
             if($scope.htmlObj.html && validate()){
                 alert("You SHALL PASS!");
+                gameData.inMiddleOfMove = false;
                 $location.url("/gameBoard");
             }
             else
                 $scope.error = true;
+        }
+        $scope.askForHint = function() {
+            $scope.hint = true;
         }
         function validate() {
             var rows = $('table').find("tr");

@@ -16,15 +16,19 @@
         <h4>Above a paragraph element is used</h4>
         <h4>Div's are used to structure the paragraph into sections</h4>
         <h4 class="alert alert-warning">Make sure to start and end your HTML and body tags!</h4>
-        <h3 class="alert alert-info">Change the font-size of an element and add a div!</h3>
+        <h3 class="alert alert-info">Change the font-size of an element to {{fontSize}} and add a div!</h3>
     </div>
     <div class="col-lg-8"> 
-        <h3 class="col-lg-8">Try it out below!</h3>
+        <h3 class="col-lg-6">Try it out below!</h3>
         <button class="btn btn-default col-lg-2 clearfix" style="margin-right:4.5em" ng-click="compile()">Check</button>
+        <button class="btn btn-danger col-lg-2 " ng-click="askForHint()">Hint</button>
         <textarea class = "code white" data-role="none" style = "resize: none;overflow: invisible; width:100%; height: 35%" autofocus="autofocus" ng-model="html"></textarea>
         <h4 class="alert alert-danger" ng-if="error">Oops! Try Again!</h4>
     </div>
-
-    <h1 style="text-align: center" >Your Code will appear here</h1>
-    <div id="container"></div>
+    <div class="col-lg-8">
+        <h4 class="alert alert-danger" ng-if="hint">Hint: style="font-size:"</h4>
+        <h1 style="text-align: center" >Your Code will appear here</h1>
+        <div class="div"></div>
+    </div>
 </div>
+    
