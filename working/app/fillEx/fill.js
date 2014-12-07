@@ -1,5 +1,6 @@
 angular.module('app.fillColor', [])
     .controller('fillCtrl', function($scope){
+    	$scope.view = "instructions";
      	$scope.pickBG = function(){
 		var option=Math.floor((Math.random()*3)+1)
 			if(option==1){
