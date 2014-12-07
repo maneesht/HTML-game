@@ -5,7 +5,10 @@ angular.module('app.game', [])
 			$("#container").append($scope.html);
 		})
 		$scope.compile = function() {
-			console.log("You clicked a button!")
+			if($scope.html)
+				alert("Free Pass! You may proceed.");
+			else
+				$scope.error = true;
 		}
 	})
 	
