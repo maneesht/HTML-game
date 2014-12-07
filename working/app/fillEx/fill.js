@@ -1,34 +1,39 @@
 angular.module('app.fillColor', [])
-    .controller('fillCtrl', function($scope){
+    .controller('fillCtrl', function($scope, gameData){
     	$scope.view = "instructions";
     	$scope.htmlObj = {};
     	$scope.htmlObj.html = "";
     	$scope.$watch('htmlObj.html', function() {
-            $("#container").empty();
-            $("#container").append($scope.htmlObj.html);
+            $(".insert").empty();
+            $(".insert").append($scope.htmlObj.html);
+            $(".insert").children().addClass("insert");
+            validate();
         })
-     	$scope.pickBG = function(){
+        var option2=Math.floor((Math.random()*3)+1)
+
 		var option=Math.floor((Math.random()*3)+1)
+     	$scope.pickBG = function(){
 			if(option==1){
-				return "blue";
+				return "#33B5E5";
 			}
 			if(option==2){
-				return "green";
+				return "#4CAF50";
 			}
 			if(option==3){
-				return "red";
+				return "#F44336";
 			}
 		}
 		$scope.pickFont = function(){
-			var option2=Math.floor((Math.random()*3)+1)
+			
 		
 			if(option2==1){
-				return "white";
+				return "#F44336";
 			}
 			if(option2==2){
-				return "purple";			}
+				return "#009688";
+			}
 			if(option2==3){
-				return "yellow";
+				return "#CDDC39";
 			}
 		}
 		$scope.compile = function() {
@@ -44,15 +49,7 @@ angular.module('app.fillColor', [])
             $scope.hint = true;
         }
         function validate() {
-            var rows = $('table').find("tr");
-            var numOfRows = rows.length;
-            if($scope.rowsNeeded !== numOfRows)
-                return false
-            for(var i = 0; i < numOfRows; i++) {
-                var numOfColumns = rows.eq(i).find('td').length;
-                if(numOfColumns !== $scope.columnsNeeded)
-                    return false;
-            }
-            return true;
+            return $scope.htmlObj.html.indexOf($scope.pickBG()) > 0 && $scope.htmlObj.html.indexOf($scope.pickFont()) > 0 
         }
+
     })
