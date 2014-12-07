@@ -1,0 +1,129 @@
+<div class="container-fluid">
+	<button class="btn btn-primary" ng-click="status.view = 'instructions'">Instructions</button>
+	<button class="btn btn-primary pull-right" ng-click="status.view = 'exercise'">Exercise</button>
+	<div ng-switch = "status.view">
+		<div ng-switch-when="instructions">
+			<div><h1 style="text-align:center" class="jumbotron">Table Page</h1></div>
+			<h4 style="margin:auto; width:50%">
+			Tutorial:Creating a table in HTMl involves 3 different tags. The &lttable&gt tag will be used to start the table. From here, you will create a new &lttr&gt, or table row. Inside a table row, you can create as many &lttd&gt tags as you need, these tags control the number of columns. Don’t forget to stay organized and to close your tags! Check out the following code as an example and then try it yourself. Good luck!
+			</h4>
+
+			<div class="code">
+
+			<br>&lthtml&gt<
+			<br><span style="padding: 15px">&ltbody&gt</span>
+			<br><span style="padding: 30px">&lttable&gt</span>
+			<br><span style="padding: 45px">	  &lttr&gt</span>
+		  	<br><span style="padding: 60px">	  &lttd&gtYou&lt/td&gt</span>
+		   	<br><span style="padding: 60px">	  &lttd&gtCan&lt/td&gt	</span>	
+		   	<br><span style="padding: 60px">	  &lttd&gtDo&lt/td&gt</span>
+		  	<br><span style="padding: 45px"> &lt/tr&gt</span>
+		  	<br><span style="padding: 45px">	 &lttr&gt</span>
+		   	<br><span style="padding: 60px">			 &lttd>It&lt/td&gt</span>
+		    <br><span style="padding: 60px">				&lttd&gtWe&lt/td&gt	</span>	
+		    <br><span style="padding: 60px">				&lttd&gtBelieve&lt/td&gt</span>
+		  	<br><span style="padding: 45px">&lt/tr&gt</span>
+		 	<br><span style="padding: 45px">	&lttr&gt</span>
+		  	<br><span style="padding: 60px">			  &lttd>In&lt/td&gt</span>
+		    <br><span style="padding: 60px">				&lttd&gtYou&lt/td&gt	</span>	
+		  	<br><span style="padding: 60px">		  &lttd>:)&lt/td&gt</span>
+		 	<br><span style="padding: 45px">	&lt/tr&gt</span>
+			<br><span style="padding: 30px">&lt/table&gt</span>
+			<br><span style="padding: 15px">&lt/body&gt</span>
+			<br>&lt/html&gt
+
+			</div>
+
+			<table class="table" style="align:center" border="1">
+				<tr>
+					<td>
+						You
+					</td>
+					<td>
+						Can
+					</td>
+					<td>
+						Do
+					</td>
+				</tr>
+				<tr>
+					<td>
+						It
+					</td>
+					<td>
+						We
+					</td>
+					<td>
+						Believe
+					</td>
+				</tr>
+				<tr>
+					<td>
+						In
+					</td>
+					<td>
+						You
+					</td>
+					<td>
+						:)
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div ng-switch-when="exercise">
+		    <div class="col-lg-4">
+		        <h4>By the way, td's determine the number of columns </h4>
+		        <h4>Also, TR's determine the number of rows. Happy Coding!
+		        </h4>
+		        <div class="code">
+		            &lttable&gt
+		            <br>
+		            <span style="padding: 15px">
+		                &lttr&gt
+		                <br>
+		                <span style="margin-left: 25px"> &lttd&gt</span>
+		                &lt/td&gt
+		                <br>
+		            </span>
+		           <span style="margin-left: 25px"> &lttd&gt</span>
+		            &lt/td&gt
+		            <br>
+		            <span style="margin-left: 25px"> &lttd&gt</span>
+		            &lt/td&gt
+		            <br>
+		            <span style="padding: 15px">&lt/tr&gt</span>
+		            <br>
+		            <span style="padding: 15px">
+		                &lttr&gt
+		                <br>
+		                <span style="margin-left: 25px"> &lttd&gt</span>
+		                &lt/td&gt
+		                <br>
+		            </span>
+		           <span style="margin-left: 25px"> &lttd&gt</span>
+		            &lt/td&gt
+		            <br>
+		            <span style="margin-left: 25px"> &lttd&gt</span>
+		            &lt/td&gt
+		            <br>
+		            <span style="padding: 15px">&lt/tr&gt</span>
+		            <br>
+		            &lt/table&gt
+		        </div>
+		        <h4>Above is a table with 2 rows and 3 columns. Fun, right?</h4>
+		        <h4 class="alert alert-info">Make a table with {{rowsNeeded}} rows and {{columnsNeeded}} columns!</h4>
+		        <h3 class="alert alert-warning">Make sure to start and end your HTML and body tags!</h3>
+		    </div>
+		    <div class="col-lg-8"> 
+		        <h3 class="col-lg-7">Try it out below!</h3>
+		        <button class="btn btn-default col-lg-2 btn-lg pull-right" ng-click="compile()">Check</button>
+		        <textarea class = "code white" data-role="none" style = "resize: none;overflow: invisible; width:100%; height: 35%" autofocus="autofocus" ng-model="htmlObj.html"></textarea>
+		        <h4 class="alert alert-danger" ng-if="error">Oops! Try Again!</h4>
+		    </div>
+		    <div class="clearfix container">
+    			<h1 style="text-align: center" >Your Code will appear below</h1>
+    			<div id="container"></div>
+			</div>
+		</div>
+	</div>
+</div>
