@@ -24,7 +24,7 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			controller: "tableCtrl"
 		})
 		.when('/textAlign', {
-			templateUrl: "app/alignEx/alignEx.html",
+			templateUrl: "app/textAlign/alignEx.html",
 			controller: "alignCtrl"
 		})
 	});
