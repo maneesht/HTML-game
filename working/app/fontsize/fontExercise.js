@@ -1,10 +1,10 @@
-angular.module('app.game', [])
-	.controller('gameCtrl',  function($scope, $location){
-		$scope.$watch('html', function() {
+angular.module('app.fontExercise', [])
+    .controller('sizeCtrl',  function($scope){
+        $scope.$watch('html', function() {
 			$("#container").empty();
 			$("#container").append($scope.html);
 		})
-		$scope.compile = function() {
+        $scope.compile = function() {
 			if($scope.html){
 				alert("Free Pass! You SHALL PASS!");
 				$location.url("/exercise");
@@ -12,5 +12,4 @@ angular.module('app.game', [])
 			else
 				$scope.error = true;
 		}
-	})
-	
+    })
