@@ -1,0 +1,63 @@
+<div class="container fluid">
+    <button class="btn btn-primary" ng-click="view = 'instructions'">Instructions</button>
+    <button class="btn btn-primary pull-right" ng-click="view = 'exercise'">Exercise</button>
+    <div ng-switch="view">
+        <div ng-switch-when="exercise">
+            <div class="col-lg-4">
+                <h4>Remember, you can add style within body tags to add background color, font color, and more. </h4>
+                <h4>Also, you can add more than one type of style in the same tag by seperating them with semicolons.
+                </h4>
+                <div class="code">
+                    &ltdiv&gt
+                    <br>
+                    <span style="padding: 15px">
+                        &lth3 style="background:black;color:white"&gt</span>
+                        <br>
+                         <span style="padding: 30px"> This is our header</span>
+                       <br>   <span style="padding: 15px">&lt/h3&gt </span>
+                        <br>
+                    &lt/div&gt
+                    
+                   
+                </div>
+                <h4>The above code will make the background black and the font color white! <br><br>Adding color is another very important style in design, not to mention it's pretty easy too!</h4>
+                <h3 class="alert alert-info">Make the background color {{pickBG()}} and then create a header and change the font color to {{pickFont()}}</h4>
+                <h3 class="alert alert-warning">Make sure to start and end your HTML and body tags!</h3>
+            </div>
+            <div class="col-lg-8"> 
+                <h3 class="col-lg-7">Try it out below!</h3>
+                <button class="btn btn-danger col-lg-2 " ng-click="askForHint()">Hint</button>
+                <button class="btn btn-default col-lg-2 btn-lg pull-right" ng-click="compile()">Check</button>
+                <textarea class = "code white" data-role="none" style = "resize: none;overflow: invisible; width:100%; height: 35%" autofocus="autofocus" ng-model="htmlObj.html"></textarea>
+                <h4 class="alert alert-danger" ng-if="error">Oops! Try Again!</h4>
+            </div>
+            <div class="col-lg-8">
+                <h4 class="alert alert-danger" ng-if="hint">Hint: style="background:" or  style="color:"</h4>
+                <h1 style="text-align: center" >Your Code will appear below</h1>
+                <div class="insert"></div>
+            </div>
+        </div>
+        <div ng-switch-when="instructions">
+            <div>
+                <h1 style="text-align:center" class="jumbotron">Color Page</h1>
+            </div>
+            <h3 style="margin:auto; width:50%;text-decoration:underline">How to change background color: </h3>
+            <h4 style="margin:auto; width:50%">
+            Inside a body tag, type in: style="background:(type a color)". If you wish to get a specific color shade, you will need to search for the color tag which can be easily found online. This background color change will apply to everything that the body tag controls, so putting it in the outermost &ltdiv&gt will change the entire background. If you had a table and added the same "style" in a &lttd&gt tag, you would only change the color of that one cell.
+            </h4>
+            <h3 style="margin:auto; width:50%;text-decoration:underline"><br>Changing text color</h3>
+            <h4 style="margin:auto; width:50%">
+            This is the same concept as changing the background color. Just as before, you will be adding a style to a body tag. However, this time we will be writing a different style. </h4>
+            <br><h4 style="margin:auto; width:50%;color:blue"> Example: style="color:red" </h4>
+            <h4 style="margin:auto; width:50%">This will change only the font color to red, not the background.</h4>
+            <br><h3 style="margin:auto; width:50%; text-decoration:underline">Useful Knowledge:</h3>
+            <h4 style="margin:auto; width:50%">When you need to add multiple styles into the same body tag, you do not write style more than once. Simply seperate each command with a semicolon. </h4>
+            <br> <h4 style="margin:auto; width:50%;color:blue"> Example: style="background:blue;text-align:center;color:white" </h4>
+            <h4 style="margin:auto; width:50%">This will make the background color blue, align the text to the center of the page, and change the text color to white.
+            </h4>
+
+            <br><h3 style="margin:auto; width:50%; text-decoration:underline">Now you try.</h3>
+            <h4 style="margin:auto; width:50%"> Create a header and then make the background color {{pickBG()}} and  the font color {{pickFont()}} </h4>
+        </div>  
+    </div>
+</div>

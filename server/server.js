@@ -1,6 +1,7 @@
 var express = require('express'),
 	livereload = require('connect-livereload'),
-    router = express.Router();
+    router = express.Router(),
+    unirest = require('unirest');
 
 var serverPort = process.env.Port || 8000;
 var server = express();
@@ -20,6 +21,13 @@ server.get('/*.png', function(req,res) {
 })
 server.get('/*.html', function (req, res) {
     res.sendfile(workingDir + req.params[0] + '.html');
+});
+server.get('/win', function(req, res) {
+	unirest.get("https://numbersapi.p.mashape.com/random/trivia?fragment=true&json=true&max=20&min=10")
+	.header("X-Mashape-Key", "Tuyp0qQfLOmsh41GPPC9Qc1dxYf9p1PZGopjsnznMi0BRFwUpo")
+	.end(function (result) {
+  		res.json(result.body);
+	});
 });
 console.log("server running on port ", serverPort);
 server.listen(serverPort);
