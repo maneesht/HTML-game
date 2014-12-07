@@ -1,5 +1,5 @@
 angular.module('html_game' , ['ngRoute', 'app.landing',
-	 'app.game', 'app.gameBoard', 'app.table', 'app.fontExercise'])
+	 'app.game', 'app.gameBoard', 'app.table', 'app.fontExercise', 'app.fillColor'])
 	.config(function($routeProvider) {
 		$routeProvider.when('/home', {
 			templateUrl: "app/home/home.html",
@@ -23,6 +23,10 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			templateUrl: "app/tableEx/tableEx.html",
 			controller: "tableCtrl"
 		})
+		.when('/fillColor',{
+			templateUrl: "app/fillEx/fillEx.html",
+			controller: "fillCtrl"
+		})
 	})
 	.service('gameData', function() {
 		var data = {
@@ -33,4 +37,4 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			tiles: {}
 		};
 		return data;
-	})
+	});
