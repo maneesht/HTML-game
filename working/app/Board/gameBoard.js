@@ -40,7 +40,7 @@ angular.module('app.gameBoard', [])
         } else {
             $scope.dis = true;
         }
-        if(done) {
+        if(done || $scope.total.score == 20) {
             $location.url("/win");
         }
     };
