@@ -1,6 +1,7 @@
 angular.module('app.fontExercise', [])
     .controller('sizeCtrl',  function($scope, $location, gameData){
     	$scope.hint = false;
+    	$scope.score = gameData.score;
     	$scope.fontSize = getRandom();
         $scope.$watch('html', function() {
 			$(".div").empty();

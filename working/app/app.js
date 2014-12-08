@@ -1,5 +1,6 @@
 angular.module('html_game' , ['ngRoute', 'app.landing',
-	 'app.game', 'app.gameBoard', 'app.table', 'app.fontExercise', 'app.textAlign', 'app.fillColor'])
+	 'app.game', 'app.gameBoard', 'app.table', 'app.fontExercise', 'app.textAlign', 'app.fillColor',
+	 'app.win'])
 	.config(function($routeProvider) {
 		$routeProvider.when('/home', {
 			templateUrl: "app/home/home.html",
@@ -30,6 +31,13 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 		.when('/fillColor',{
 			templateUrl: "app/fillEx/fillEx.html",
 			controller: "fillCtrl"
+		})
+		.when('/win',{
+			templateUrl: "app/win/win.html",
+			controller: "winCtrl"
+		})
+		.otherwise({
+			redirectTo:'/home'
 		})
 	})
 	.service('gameData', function() {

@@ -1,6 +1,7 @@
 angular.module('app.table', [])
-    .controller('tableCtrl',  function($scope, $location){
+    .controller('tableCtrl',  function($scope, $location, gameData){
         $scope.status = {};
+        $scope.score = 3;
         $scope.status.view = "instructions";
         $scope.htmlObj = {};
         $scope.rowsNeeded = getRandom(), $scope.columnsNeeded = getRandom();
@@ -19,12 +20,14 @@ angular.module('app.table', [])
             if($scope.htmlObj.html && validate()){
                 alert("You SHALL PASS!");
                 gameData.inMiddleOfMove = false;
+                gameData.score += $scope.score;
                 $location.url("/gameBoard");
             }
             else
                 $scope.error = true;
         }
         $scope.askForHint = function() {
+            $scope.score = 1;
             $scope.hint = true;
         }
         function validate() {
