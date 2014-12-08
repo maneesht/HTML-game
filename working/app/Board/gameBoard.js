@@ -46,7 +46,7 @@ angular.module('app.gameBoard', [])
         }
     };
     function setImage(tile) {
-        var points =  localStorage.getItem('points');
+        var points =  parseInt(localStorage.getItem('points'));
         if(tile >= 12)
                 tile = tile - 12;
         for (var i = 0; i < 12; i++) {
