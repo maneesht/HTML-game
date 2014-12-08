@@ -1,7 +1,7 @@
 angular.module('app.fontExercise', [])
-    .controller('sizeCtrl',  function($scope, $location, gameData){
+    .controller('sizeCtrl',  function($scope, $location){
     	$scope.hint = false;
-    	$scope.score = gameData.score;
+    	$scope.points = 3;
     	$scope.fontSize = getRandom();
         $scope.$watch('html', function() {
 			$(".div").empty();
@@ -11,12 +11,11 @@ angular.module('app.fontExercise', [])
         $scope.compile = function() {
 			if($scope.html && validate()){
 				alert("You SHALL PASS!");
-				if($scope.hint) {
-					gameData.score = 1;
-				} else {
-					gameData.score = 3;
-				}
-				gameData.inMiddleOfMove = false;
+				var points =  parseInt(localStorage.getItem('points'));
+                localStorage.setItem('points', points + $scope.points);
+                points =  parseInt(localStorage.getItem('points'));
+                console.log(points);
+                localStorage.setItem("inMiddleOfMove", false);
 				$location.url("/gameBoard");
 			}
 			else
@@ -25,6 +24,7 @@ angular.module('app.fontExercise', [])
 
 		$scope.askForHint = function() {
 			$scope.hint = true;
+			$scope.points = 1;
 		}
 
 		function validate() {

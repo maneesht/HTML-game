@@ -1,5 +1,5 @@
 angular.module('app.textAlign', [])
-	.controller('alignCtrl',  function($scope, $location, gameData){
+	.controller('alignCtrl',  function($scope, $location){
         var score = 3;
         var option=Math.floor((Math.random()*3)+1)
 		$scope.$watch('html', function() {
@@ -26,9 +26,12 @@ angular.module('app.textAlign', [])
 		   $scope.compile = function() {
             if($scope.html && validate()){
                 alert("You SHALL PASS!");
+                var points =  parseInt(localStorage.getItem('points'));
+                localStorage.setItem('points', points+ score);
+                points =  parseInt(localStorage.getItem('points'));
+                console.log(points);
+                localStorage.setItem("inMiddleOfMove", false);
                 $location.url("/gameBoard");
-                gameData.inMiddleOfMove = false;
-                gameData.score += score;
             }
             else{
                 score = 2;

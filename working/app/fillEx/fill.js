@@ -1,5 +1,5 @@
 angular.module('app.fillColor', [])
-    .controller('fillCtrl', function($scope, gameData, $location){
+    .controller('fillCtrl', function($scope, $location){
     	$scope.view = "instructions";
     	$scope.htmlObj = {};
         $scope.score = 3;
@@ -40,8 +40,11 @@ angular.module('app.fillColor', [])
 		$scope.compile = function() {
             if($scope.htmlObj.html && validate()){
                 alert("You SHALL PASS!");
-                gameData.score += $scope.score;
-                gameData.inMiddleOfMove = false;
+                var points =  parseInt(localStorage.getItem('points'));
+                localStorage.setItem('points', points + $scope.score);
+                localStorage.setItem("inMiddleOfMove", false);
+                points =  parseInt(localStorage.getItem('points'));
+                console.log(points);
                 $location.url("/gameBoard");
             }
             else

@@ -40,7 +40,7 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			redirectTo:'/home'
 		})
 	})
-	.service('gameData', function() {
+	/*.service('gameData', function() {
 		var data = {
 			score: 0,
 			spacesLeft: 12,
@@ -49,4 +49,4 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			tiles: {}
 		};
 		return data;
-	});
+	});*/

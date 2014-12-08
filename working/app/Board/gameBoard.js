@@ -1,33 +1,42 @@
 angular.module('app.gameBoard', [])
-    .controller('boardCtrl',  function($scope, $location, gameData){
+    .controller('boardCtrl',  function($scope, $location, $http){
     $scope.display="Roll Dice";
-    $scope.score = gameData.score;
-    if(!gameData.score) {
-        $scope.score = 0;
-    }
     $scope.dis = true;
-    if(gameData.inMiddleOfMove) {
-    	$scope.disableDice = true;
+    $scope.total = {};
+    $scope.total.score = parseInt(localStorage.getItem('points')) || 0;
+    console.log(parseInt(localStorage.getItem('points')))
+    var currentSpace = parseInt(localStorage.getItem('currentSpace'));
+    var inMiddleOfMove = (localStorage.getItem('inMiddleOfMove'));
+    $scope.tiles = localStorage.getItem('tiles');
+   if(inMiddleOfMove === "true") {
+        $scope.disableDice = true;
     } else {
-    	$scope.disableDice = false;
+        $scope.disableDice = false;
     }
-    $scope.tiles = gameData.tiles;
-    for (var i = 11; i >= 0; i--) {
-        if(!$scope.tiles[i]) {
+    /*$scope.tiles = gameData.tiles;*/
+    if($scope.tiles.length <= 1) {
+        for (var i = 11; i >= 0; i--) {
             $scope.tiles[i] = {
                 display: false
             };
         }
-    };
+    }
+    $scope.tiles = ($scope.tiles[0]);
+    console.log($scope.tiles.length);
     $scope.rollDice = function() {
-       var done = _.filter(gameData.tiles, "pass").length == 12 ? true : false;
-        if(!gameData.inMiddleOfMove && !done) {
+       var done = _.filter($scope.tiles, "pass").length == 12 ? true : false;
+        
+        /*localStorage.setItem('points', points+=2);
+        $scope.total.score = localStorage.getItem('points');*/
+        if(inMiddleOfMove === "false" && !done) {
+            var points =  localStorage.getItem('points');
+            //localStorage.setItem('points', points+=points);
             $scope.option=Math.floor((Math.random()*3)+1);
-            gameData.spacesToMove = $scope.option;
             $scope.display=$scope.option;
-            gameData.currentSpace = $scope.option + gameData.currentSpace;
-            setImage(gameData.currentSpace);
-            gameData.inMiddleOfMove = true;
+            localStorage.setItem('currentSpace', $scope.option + currentSpace);
+            setImage($scope.option + currentSpace);
+            localStorage.setItem("inMiddleOfMove", true);
+            inMiddleOfMove = true;
             $scope.disableDice = true;
         } else {
             $scope.dis = true;
@@ -37,18 +46,25 @@ angular.module('app.gameBoard', [])
         }
     };
     function setImage(tile) {
+
+        var points =  localStorage.getItem('points');
         if(tile >= 12)
                 tile = tile - 12;
         for (var i = 0; i < 12; i++) {
-            gameData.tiles[i].display = false;
+            $scope.tiles[i].display = false;
         };
         if(tile == 0)
-            gameData.score +=3;
-        gameData.tiles[tile].display = true;
-        gameData.tiles[tile].pass = true;
-        gameData.currentSpace = tile;
-        $scope.tiles = gameData.tiles;
+            points +=3;
+        localStorage.setItem('points', points);
+        $scope.total.points = points;
+        var tiles = localStorage.getItem('tiles'); 
+        $scope.tiles[tile].display = true;
+        $scope.tiles[tile].pass = true;
+        var currentSpace = tile;
+        localStorage.setItem("currentSpace", tile);
+        localStorage.setItem("tiles", $scope.tiles);
         $scope.dis = false;
+        console.log($scope.tiles);
     };
     $scope.proceed = function() {
         var choice = Math.floor((Math.random()*5)+1);
