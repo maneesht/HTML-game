@@ -1,5 +1,5 @@
 angular.module('app.table', [])
-    .controller('tableCtrl',  function($scope, $location, gameData){
+    .controller('tableCtrl',  function($scope, $location){
         $scope.status = {};
         $scope.score = 3;
         $scope.status.view = "instructions";
@@ -19,8 +19,11 @@ angular.module('app.table', [])
         $scope.compile = function() {
             if($scope.htmlObj.html && validate()){
                 alert("You SHALL PASS!");
-                gameData.inMiddleOfMove = false;
-                gameData.score += $scope.score;
+                var points =  parseInt(localStorage.getItem('points'));
+                localStorage.setItem('points', points + $scope.score);
+                points =  parseInt(localStorage.getItem('points'));
+                console.log(points);
+                localStorage.setItem("inMiddleOfMove", false);
                 $location.url("/gameBoard");
             }
             else

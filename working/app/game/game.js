@@ -1,5 +1,5 @@
 angular.module('app.game', [])
-	.controller('gameCtrl',  function($scope, $location, gameData){
+	.controller('gameCtrl',  function($scope, $location){
 		$scope.$watch('html', function() {
 			$("#container").empty();
 			$("#container").append($scope.html);
@@ -7,7 +7,9 @@ angular.module('app.game', [])
 		$scope.compile = function() {
 			if($scope.html){
 				alert("Free Pass! You SHALL PASS!");
-				gameData.inMiddleOfMove = false;
+                localStorage.setItem("inMiddleOfMove", false);
+                points =  parseInt(localStorage.getItem('points'));
+                console.log(points);
 				$location.url("/gameBoard");
 			}
 			else
