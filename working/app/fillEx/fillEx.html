@@ -4,45 +4,23 @@
     <div ng-switch="view">
         <div ng-switch-when="exercise">
             <div class="col-lg-4">
-                <h4>By the way, td's determine the number of columns </h4>
-                <h4>Also, TR's determine the number of rows. Happy Coding!
+                <h4>Remember, you can add style within body tags to add background color, font color, and more. </h4>
+                <h4>Also, you can add more than one type of style in the same tag by seperating them with semicolons.
                 </h4>
                 <div class="code">
-                    &lttable&gt
+                    &ltdiv&gt
                     <br>
                     <span style="padding: 15px">
-                        &lttr&gt
+                        &lth3 style="background:black;color:white"&gt</span>
                         <br>
-                        <span style="margin-left: 25px"> &lttd&gt</span>
-                        &lt/td&gt
+                         <span style="padding: 30px"> This is our header</span>
+                       <br>   <span style="padding: 15px">&lt/h3&gt </span>
                         <br>
-                    </span>
-                   <span style="margin-left: 25px"> &lttd&gt</span>
-                    &lt/td&gt
-                    <br>
-                    <span style="margin-left: 25px"> &lttd&gt</span>
-                    &lt/td&gt
-                    <br>
-                    <span style="padding: 15px">&lt/tr&gt</span>
-                    <br>
-                    <span style="padding: 15px">
-                        &lttr&gt
-                        <br>
-                        <span style="margin-left: 25px"> &lttd&gt</span>
-                        &lt/td&gt
-                        <br>
-                    </span>
-                   <span style="margin-left: 25px"> &lttd&gt</span>
-                    &lt/td&gt
-                    <br>
-                    <span style="margin-left: 25px"> &lttd&gt</span>
-                    &lt/td&gt
-                    <br>
-                    <span style="padding: 15px">&lt/tr&gt</span>
-                    <br>
-                    &lt/table&gt
+                    &lt/div&gt
+                    
+                   
                 </div>
-                <h4>Above is a table with 2 rows and 3 columns. Fun, right?</h4>
+                <h4>The above code will make the background black and the font color white! <br><br>Adding color is another very important style in design, not to mention it's pretty easy too!</h4>
                 <h3 class="alert alert-info">Make the background color {{pickBG()}} and then create a header and change the font color to {{pickFont()}}</h4>
                 <h3 class="alert alert-warning">Make sure to start and end your HTML and body tags!</h3>
             </div>
