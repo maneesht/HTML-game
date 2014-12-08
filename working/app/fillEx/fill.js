@@ -2,6 +2,7 @@ angular.module('app.fillColor', [])
     .controller('fillCtrl', function($scope, gameData){
     	$scope.view = "instructions";
     	$scope.htmlObj = {};
+        $scope.score = 3;
     	$scope.htmlObj.html = "";
     	$scope.$watch('htmlObj.html', function() {
             $(".insert").empty();
@@ -39,6 +40,7 @@ angular.module('app.fillColor', [])
 		$scope.compile = function() {
             if($scope.htmlObj.html && validate()){
                 alert("You SHALL PASS!");
+                gameData.score += $scope.score;
                 gameData.inMiddleOfMove = false;
                 $location.url("/gameBoard");
             }
@@ -47,6 +49,7 @@ angular.module('app.fillColor', [])
         }
          $scope.askForHint = function() {
             $scope.hint = true;
+            $scope.score = 1;
         }
         function validate() {
             return $scope.htmlObj.html.indexOf($scope.pickBG()) > 0 && $scope.htmlObj.html.indexOf($scope.pickFont()) > 0 
