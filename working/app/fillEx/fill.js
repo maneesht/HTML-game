@@ -1,5 +1,5 @@
 angular.module('app.fillColor', [])
-    .controller('fillCtrl', function($scope, gameData){
+    .controller('fillCtrl', function($scope, gameData, $location){
     	$scope.view = "instructions";
     	$scope.htmlObj = {};
         $scope.score = 3;

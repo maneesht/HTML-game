@@ -3,8 +3,14 @@
     <h1 style="text-align:center" class="jumbotron">Text Alignment Page</h1>
     </div>
          <h3 style="margin:auto; width:50%;text-decoration:underline">How to align text: </h3>
+         <h3 style="text-align:center">(h4 h3 or h2 or h1 is a header) Ex:</h3>
+         <div class="code">
+         <h3 style="text-align:center">
+            &lth3 style="text-align:center"&gtI'm a header!&lt/h3&gt
+         </h3>
+         </div>
          <h4 style="margin:auto; width:50%">
-            Inside a body tag, type in: style="align:(choose either 'center', 'left', or 'right')". This simple formatting style is very important in design.     
+            Inside a body tag, type in: style="text-align:(choose either center, left or right)". This simple formatting style is very important in design.
          </h4>
          <br><h3 style="margin:auto; width:50%;text-decoration:underline">Now You Try </h3>
          <h4 style="margin:auto; width:50%">Create a header and then try to align it to the {{pickAlign()}}
@@ -12,7 +18,7 @@
         <h3 class="col-lg-8">Try it out here!</h3>
         <button class="btn btn-default col-lg-2 clearfix" style="margin-right:4.5em" ng-click="compile()">Check</button>
         <textarea class = "code white" data-role="none" style = "resize: none;overflow: invisible; width:100%; height: 10%" autofocus="autofocus" ng-model="html"></textarea>
-        <h4 class="alert alert-danger" ng-if="error">You must at least attempt this!</h4>
+        <h4 class="alert alert-danger" ng-if="error">Oops! Try Again!</h4>
     </div>
     <div class="clearfix">
         <h1 style="text-align: center" >Your Code will appear below</h1>

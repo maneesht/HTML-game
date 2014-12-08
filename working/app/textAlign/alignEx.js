@@ -27,6 +27,7 @@ angular.module('app.textAlign', [])
             if($scope.html && validate()){
                 alert("You SHALL PASS!");
                 $location.url("/gameBoard");
+                gameData.inMiddleOfMove = false;
                 gameData.score += score;
             }
             else{
