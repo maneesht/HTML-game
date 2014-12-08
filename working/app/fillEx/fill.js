@@ -20,7 +20,7 @@ angular.module('app.fillColor', [])
 				return "#4CAF50";
 			}
 			if(option==3){
-				return "#F44336";
+				return "#00BF46";
 			}
 		}
 		$scope.pickFont = function(){
