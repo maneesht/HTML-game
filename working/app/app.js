@@ -36,6 +36,9 @@ angular.module('html_game' , ['ngRoute', 'app.landing',
 			templateUrl: "app/win/win.html",
 			controller: "winCtrl"
 		})
+		.otherwise({
+			redirectTo:'/home'
+		})
 	})
 	.service('gameData', function() {
 		var data = {

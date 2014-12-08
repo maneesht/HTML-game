@@ -63,6 +63,9 @@ gulp.task('images', function() {
 })
 
 gulp.task('dev', function() {
-	
 	return runSequence('clean', 'images',  'run', 'build','openBrowser', 'livereload');
+})
+
+gulp.task('prod', function() {
+	return runSequence('clean', 'images',  'run', 'build','openBrowser');
 })

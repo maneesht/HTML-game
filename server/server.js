@@ -10,8 +10,14 @@ server.use(livereload());
 server.use('/CSS', express.static(workingDir + 'CSS'));
 server.use('/lib', express.static(workingDir + 'lib'));
 server.get("/", function(req,res) {
-	console.log("Hello!");
 	res.sendfile(workingDir + "index.html");
+});
+server.get("/", function(req,res) {
+	res.writeHead(302, {
+  		'Location': '/#/home'
+  		//add other headers here...
+	});
+	res.end();
 });
 server.get('/*.js', function(req,res) {
 	res.sendfile(workingDir+ req.params[0] + '.js');
