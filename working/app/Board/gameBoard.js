@@ -36,7 +36,7 @@ angular.module('app.gameBoard', [])
     function setImage(tile) {
         if(tile >= 12)
                 tile = tile - 12;
-        for (var i = 0; i < 12; i++) {
+        /*for (var i = 0; i < 12; i++) {
             gameData.tiles[i].display = false;
             if(i == tile && gameData.tiles[i].pass) {
                 tile += 1;
@@ -50,7 +50,9 @@ angular.module('app.gameBoard', [])
             } 
             if(tile >= 12)
                 tile = tile - 12;
-        }
+        }*/
+        if(tile == 0)
+            gameData.score +=3;
         gameData.tiles[tile].display = true;
         gameData.tiles[tile].pass = true;
         gameData.currentSpace = tile;
