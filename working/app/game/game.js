@@ -7,9 +7,13 @@ angular.module('app.game', [])
 		$scope.compile = function() {
 			if($scope.html){
 				alert("Free Pass! You SHALL PASS!");
-                localStorage.setItem("inMiddleOfMove", false);
+                var points =  parseInt(localStorage.getItem('points'));
+                console.log(points);
+                var x = points + 3;
+                localStorage.setItem('points', x);
                 points =  parseInt(localStorage.getItem('points'));
                 console.log(points);
+                localStorage.setItem("inMiddleOfMove", false);
 				$location.url("/gameBoard");
 			}
 			else

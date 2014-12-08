@@ -29,7 +29,7 @@ angular.module('app.gameBoard', [])
         /*localStorage.setItem('points', points+=2);
         $scope.total.score = localStorage.getItem('points');*/
         if(inMiddleOfMove === "false" && !done) {
-            var points =  localStorage.getItem('points');
+            var points =  parseInt(localStorage.getItem('points'));
             //localStorage.setItem('points', points+=points);
             $scope.option=Math.floor((Math.random()*3)+1);
             $scope.display=$scope.option;
