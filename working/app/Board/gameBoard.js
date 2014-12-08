@@ -3,6 +3,7 @@ angular.module('app.gameBoard', [])
     $scope.display="Roll Dice";
     $scope.dis = true;
     $scope.total = {};
+    $scope.total.score = 0;
     $scope.total.score = parseInt(localStorage.getItem('points')) || 0;
     console.log(parseInt(localStorage.getItem('points')))
     var currentSpace = parseInt(localStorage.getItem('currentSpace'));
