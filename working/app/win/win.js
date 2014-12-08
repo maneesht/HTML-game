@@ -4,5 +4,7 @@ angular.module('app.win', [])
             $http.get("/win").then(function(result) {
                 $scope.trivia = result.data.number + ": " + result.data.text;
             })
+
         }
+        $scope.points=localStorage.getItem("points")
     })
